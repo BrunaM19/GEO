@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geo</title>
+    <style>
+
+      .boxes-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 30px;
+      }
+      
+      .box {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body bgcolor="white">
+    <h1><font color="black">GEO - Get Everything Organized</font></h1>
+    <p><font color="black">The ultimate organization platform for Epitech students. Manage projects, track deadlines, collaborate with peers, and boost your productivity.</font></p>
+
+    <div style="display: flex; gap: 20px; align-items: center;">
+      <div style="border: 1px solid black; flex: 1; padding: 10px;">
+        <h3>Get Started</h3>        
+        <form>
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required><br><br>
+
+          <label for="surname">Surname:</label><br>
+          <input type="text" id="surname" name="surname" required><br><br>
+
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br><br>
+
+          <label for="password">Password:</label><br>
+          <input type="password" id="password" name="password" required><br><br>
+
+          <label for="confirm_password">Confirm Password:</label><br>
+          <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+
+          <p id="error-message" style="color: red; display: none;">Passwords do not match!</p>
+
+          <input type="submit" value="Register" onclick="return validatePasswords();">
+        </form>
+      </div>
+
+      <div style="border: 1px solid black; flex: 1; padding: 10px;">
+        <h3>Login</h3>
+        <p>Already have an account? Log in to access your tasks.</p>
+        
+        <form>
+          <label for="login_email">Email:</label><br>
+          <input type="email" id="login_email" name="login_email" required><br><br>
+
+          <label for="login_password">Password:</label><br>
+          <input type="password" id="login_password" name="login_password" required><br><br>
+
+          <input type="submit" value="Login">
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function validatePasswords() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm_password").value;
+
+        if (password !== confirmPassword) {
+          document.getElementById("error-message").style.display = "block";
+          return false;
+        } else {
+          document.getElementById("error-message").style.display = "none";
+          return true;
+        }
+      }
+    </script>
+        <h1><font color="black">Features</font></h1>
+        <p><font color="black">Everything you need to succeed in your Epitech journey</font></p>
+        
+        <div class="boxes-container">
+          <div class="box">
+            <h3>Project Management</h3>
+            <p>Track all your projects, deadlines, and credits in one place.</p>
+          </div>
+          <div class="box">
+            <h3>Task Organization</h3>
+            <p>Break down projects into manageable tasks and track your progress.</p>
+          </div>
+          <div class="box">
+            <h3>Group Collaboration</h3>
+            <p>Create groups for team projects with messaging and calls.</p>
+          </div>
+        </div>
+        
+        <div class="boxes-container">
+          <div class="box">
+            <h3>Notes & Documentst</h3>
+            <p>Organize your day with built-in calendar and task planner.</p>
+          </div>
+          <div class="box">
+            <h3>AI Assistant (Coming Soon)</h3>
+            <p>Get help from GEO, your personal AI assistant for studying.</p>
+          </div>
+          <div class="box">
+            <h3>Focus Mode</h3>
+            <p>Track your coding hours and boost productivity with focus sessions.</p>
+          </div>
+        </div>
+        
+  </body>
+</html>
